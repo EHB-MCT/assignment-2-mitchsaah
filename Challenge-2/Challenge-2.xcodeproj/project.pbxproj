@@ -6,6 +6,12 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		1351496C2CE3E9B600A0089B /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 1351496B2CE3E9B600A0089B /* Alamofire */; };
+		1351496F2CE3EA1C00A0089B /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 1351496E2CE3EA1C00A0089B /* FirebaseAnalytics */; };
+		135149712CE3EA1C00A0089B /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 135149702CE3EA1C00A0089B /* FirebaseFirestore */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		13BF8D182CC911FF009034B2 /* Challenge-2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Challenge-2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -23,6 +29,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1351496F2CE3EA1C00A0089B /* FirebaseAnalytics in Frameworks */,
+				1351496C2CE3E9B600A0089B /* Alamofire in Frameworks */,
+				135149712CE3EA1C00A0089B /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +74,9 @@
 			);
 			name = "Challenge-2";
 			packageProductDependencies = (
+				1351496B2CE3E9B600A0089B /* Alamofire */,
+				1351496E2CE3EA1C00A0089B /* FirebaseAnalytics */,
+				135149702CE3EA1C00A0089B /* FirebaseFirestore */,
 			);
 			productName = "Challenge-2";
 			productReference = 13BF8D182CC911FF009034B2 /* Challenge-2.app */;
@@ -94,6 +106,10 @@
 			);
 			mainGroup = 13BF8D0F2CC911FF009034B2;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				1351496A2CE3E9B600A0089B /* XCRemoteSwiftPackageReference "Alamofire" */,
+				1351496D2CE3EA1C00A0089B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 13BF8D192CC911FF009034B2 /* Products */;
 			projectDirPath = "";
@@ -322,6 +338,43 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1351496A2CE3E9B600A0089B /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.10.1;
+			};
+		};
+		1351496D2CE3EA1C00A0089B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.4.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1351496B2CE3E9B600A0089B /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1351496A2CE3E9B600A0089B /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		1351496E2CE3EA1C00A0089B /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1351496D2CE3EA1C00A0089B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		135149702CE3EA1C00A0089B /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1351496D2CE3EA1C00A0089B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 13BF8D102CC911FF009034B2 /* Project object */;
 }

@@ -8,5 +8,15 @@ class WeatherService {
     private let defaultLat: Double = 50.8899
     private let defaultLon: Double = 4.0966
     
-    
+    func fetchSoilMoisture(lat: Double? = nil, lon: Double? = nil, completion: @escaping (Double?) -> Void) {
+        let latitude = lat ?? defaultLat
+        let longitude = lon ?? defaultLon
+        
+        let parameters: [String: Any] = [
+            "lat": latitude,
+            "lon": longitude,
+            "exclude": "minutely, hourly, daily, alerts",
+            "appid": apiKey
+        ]
+    }
 }

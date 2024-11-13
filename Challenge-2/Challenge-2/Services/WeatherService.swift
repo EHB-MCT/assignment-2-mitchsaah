@@ -19,6 +19,15 @@ class WeatherService {
             "appid": apiKey
         ]
         
-        AF.request(baseURL, parameters: parameters)
+        AF.request(baseURL, parameters: parameters).responseDecodable (of: WeatherResponse.self) { response in
+            switch response.result {
+            case .success(let data):
+                let soilMoisture = data.current.soilMoisture
+                completion(soilMoisture)
+            case .failure(let error):
+                print("Error fetching soil moisture data: \(error)")
+                completion(nil)
+            }
+        }
     }
 }

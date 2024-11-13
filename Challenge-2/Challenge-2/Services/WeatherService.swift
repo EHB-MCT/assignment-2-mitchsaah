@@ -18,5 +18,7 @@ class WeatherService {
             "exclude": "minutely, hourly, daily, alerts",
             "appid": apiKey
         ]
+        
+        AF.request(baseURL, parameters: parameters)
     }
 }

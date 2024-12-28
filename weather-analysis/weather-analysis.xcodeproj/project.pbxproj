@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		1377787A2D204B2100AA2EB2 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 137778792D204B2100AA2EB2 /* Alamofire */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		137778662D20448700AA2EB2 /* weather-analysis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "weather-analysis.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -23,6 +27,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1377787A2D204B2100AA2EB2 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +70,7 @@
 			);
 			name = "weather-analysis";
 			packageProductDependencies = (
+				137778792D204B2100AA2EB2 /* Alamofire */,
 			);
 			productName = "weather-analysis";
 			productReference = 137778662D20448700AA2EB2 /* weather-analysis.app */;
@@ -94,6 +100,9 @@
 			);
 			mainGroup = 1377785D2D20448700AA2EB2;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				137778782D204B2100AA2EB2 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 137778672D20448700AA2EB2 /* Products */;
 			projectDirPath = "";
@@ -324,6 +333,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		137778782D204B2100AA2EB2 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.10.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		137778792D204B2100AA2EB2 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 137778782D204B2100AA2EB2 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1377785E2D20448700AA2EB2 /* Project object */;
 }

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1377787A2D204B2100AA2EB2 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 137778792D204B2100AA2EB2 /* Alamofire */; };
+		1377787D2D20568800AA2EB2 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 1377787C2D20568800AA2EB2 /* FirebaseAnalytics */; };
+		1377787F2D20568800AA2EB2 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 1377787E2D20568800AA2EB2 /* FirebaseFirestore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +29,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1377787D2D20568800AA2EB2 /* FirebaseAnalytics in Frameworks */,
 				1377787A2D204B2100AA2EB2 /* Alamofire in Frameworks */,
+				1377787F2D20568800AA2EB2 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +75,8 @@
 			name = "weather-analysis";
 			packageProductDependencies = (
 				137778792D204B2100AA2EB2 /* Alamofire */,
+				1377787C2D20568800AA2EB2 /* FirebaseAnalytics */,
+				1377787E2D20568800AA2EB2 /* FirebaseFirestore */,
 			);
 			productName = "weather-analysis";
 			productReference = 137778662D20448700AA2EB2 /* weather-analysis.app */;
@@ -102,6 +108,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				137778782D204B2100AA2EB2 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				1377787B2D20568800AA2EB2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 137778672D20448700AA2EB2 /* Products */;
@@ -343,6 +350,14 @@
 				minimumVersion = 5.10.2;
 			};
 		};
+		1377787B2D20568800AA2EB2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.6.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -350,6 +365,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 137778782D204B2100AA2EB2 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		1377787C2D20568800AA2EB2 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1377787B2D20568800AA2EB2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		1377787E2D20568800AA2EB2 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1377787B2D20568800AA2EB2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

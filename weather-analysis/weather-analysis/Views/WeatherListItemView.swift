@@ -5,6 +5,7 @@ struct WeatherListItemView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 5) {
+            Text("Date: \(DateUtils.formatDate(from: day.dt))")
             Text("Max Temp: \(day.temp.max, specifier: "%.1f")°C")
             Text("Min Temp: \(day.temp.min, specifier: "%.1f")°C")
             Text("Precipitation Chance: \(day.pop * 100, specifier: "%.0f")%")

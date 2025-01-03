@@ -8,14 +8,23 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var dailyWeather: [DailyWeather] = []
+    @State private var errorMessage: String?
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            if let errorMessage = errorMessage {
+                Text("Error: \(errorMessage)")
+                    .foregroundColor(.red)
+                    .padding()
+            } else if dailyWeather.isEmpty {
+                Text("Fetching weather data...")
+                    .padding()
+            } else {
+                Text("Weather data fetched successfully!")
+                    .padding()
+            }
         }
-        .padding()
     }
 }
 

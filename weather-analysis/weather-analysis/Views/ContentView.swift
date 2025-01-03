@@ -15,8 +15,9 @@ struct ContentView: View {
                 Text("Fetching weather data...")
                     .padding()
             } else {
-                Text("Weather data fetched successfully!")
-                    .padding()
+                List(dailyWeather, id: \.dt) { day in
+                    WeatherListItemView(day: day)
+                }
             }
         }
         .onAppear {

@@ -6,6 +6,9 @@ class WeatherService {
     private let baseURL = "https://api.openweathermap.org/data/2.5/onecall"
     
     func fetchDailyWeather(lat: Double, lon: Double, completion: @escaping ([DailyWeather]?) -> Void) {
+        let lat = 50.8503 // Brussels latitude
+        let lon = 4.3517  // Brussels longitude
+        
         let parameters: [String: Any] = [
                     "lat": lat,
                     "lon": lon,

@@ -16,8 +16,20 @@ struct ContentView: View {
                 Text("Fetching weather data...")
                     .padding()
             } else {
-                List(dailyWeather, id: \.dt) { day in
-                    WeatherListItemView(day: day)
+                List {
+                    if !alerts.isEmpty {
+                        Section(header: Text("Weather Alerts").font(.headline)) {
+                            ForEach(alerts, id: \.self) { alert in
+                                Text(alert)
+                                    .foregroundColor(.red)
+                            }
+                        }
+                    }
+                    Section(header: Text("Daily Weather").font(.headline)) {
+                        ForEach(dailyWeather, id: \.dt) { day in
+                            WeatherListItemView(day: day)
+                        }
+                    }
                 }
             }
         }

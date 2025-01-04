@@ -4,6 +4,7 @@ import Alamofire
 class WeatherService {
     private let apiKey = "e44c5b1dfd503e307697d439de360179"
     private let baseURL = "https://api.openweathermap.org/data/3.0/onecall"
+    private let firestoreService = FirestoreService()
     
     func fetchDailyWeather(lat: Double, lon: Double, completion: @escaping ([DailyWeather]?) -> Void) {
         let lat = 50.8503 // Brussels latitude
@@ -20,6 +21,19 @@ class WeatherService {
         AF.request(baseURL, parameters: parameters).responseDecodable(of: WeatherResponse.self) { response in
             switch response.result {
             case .success(let data):
+                let alerts = self.detectAlerts(for: data.daily)
+                for alert in alerts {
+                    self.firestoreService.saveWeatherAlert(
+                        date: alert["date"] as! TimeInterval,
+                        alertDetails: alert
+                    ) { error in
+                        if let error = error {
+                            print("Failed to save alert: \(error)")
+                        } else {
+                            print("Alert saved: \(alert)")
+                        }
+                    }
+                }
                 completion(data.daily)
             case .failure(let error):
                 print("Error fetching weather data: \(error)")

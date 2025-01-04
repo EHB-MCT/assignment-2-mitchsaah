@@ -3,6 +3,7 @@ import SwiftUI
 struct ContentView: View {
     @State private var dailyWeather: [DailyWeather] = []
     @State private var errorMessage: String?
+    @State private var alerts: [String] = []
     private let weatherService = WeatherService()
     
     var body: some View {

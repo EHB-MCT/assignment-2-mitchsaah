@@ -39,11 +39,20 @@ class WeatherService {
                     "message": "Temperatures below freezing detected."
                 ])
             }
+            
             if day.uvi > 8 {
                 alerts.append([
                     "date": day.dt,
                     "type": "UV Warning",
                     "message": "Extreme UV Index detected."
+                ])
+            }
+            
+            if let rain = day.rain, rain > 10 {
+                alerts.append([
+                    "date": day.dt,
+                    "type": "Rain Warning",
+                    "message": "Heavy rainfall expected."
                 ])
             }
         }

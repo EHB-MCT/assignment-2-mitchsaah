@@ -29,6 +29,18 @@ class WeatherService {
     }
     
     private func detectAlerts(for dailyWeather: [DailyWeather]) -> [[String: Any]] {
-        return [] // Placeholder
+        var alerts = [[String: Any]]()
+
+        for day in dailyWeather {
+            if day.temp.min < 0 {
+                alerts.append([
+                    "date": day.dt,
+                    "type": "Frost Warning",
+                    "message": "Temperatures below freezing detected."
+                ])
+            }
+        }
+        
+        return alerts
     }
 }

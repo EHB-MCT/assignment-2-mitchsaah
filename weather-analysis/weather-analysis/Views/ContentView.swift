@@ -43,6 +43,18 @@ struct ContentView: View {
             DispatchQueue.main.async {
                 if let weather = weather {
                     self.dailyWeather = weather
+                    self.alerts = weather.compactMap { day -> String? in
+                        if day.temp.min < 0 {
+                            return "Frost Warning: Temperatures below freezing on \(DateUtils.formatDate(from: day.dt))."
+                        }
+                        if day.uvi > 8 {
+                            return "UV Warning: Extreme UV Index on \(DateUtils.formatDate(from: day.dt))."
+                        }
+                        if let rain = day.rain, rain > 10 {
+                            return "Rain Warning: Heavy rainfall expected on \(DateUtils.formatDate(from: day.dt))."
+                        }
+                        return nil
+                    }
                 } else {
                     self.errorMessage = "Failed to fetch weather data."
                 }

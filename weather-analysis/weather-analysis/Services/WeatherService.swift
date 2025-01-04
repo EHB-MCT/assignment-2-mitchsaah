@@ -27,4 +27,8 @@ class WeatherService {
             }
         }
     }
+    
+    private func detectAlerts(for dailyWeather: [DailyWeather]) -> [[String: Any]] {
+        return [] // Placeholder
+    }
 }

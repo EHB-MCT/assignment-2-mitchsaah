@@ -36,6 +36,11 @@ struct ContentView: View {
         }
         .onAppear {
             fetchWeather()
+            FirestoreService().fetchAggregatedAlertStats { stats in
+                DispatchQueue.main.async {
+                    self.alertStats = stats
+                }
+            }
         }
     }
     

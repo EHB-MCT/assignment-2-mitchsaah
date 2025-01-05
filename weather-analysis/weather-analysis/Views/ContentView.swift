@@ -56,9 +56,9 @@ struct ContentView: View {
         }
         .onAppear {
             fetchWeather()
-            FirestoreService().fetchAggregatedAlertStats { stats in
+            FirestoreService().fetchAlertCounts { counts in
                 DispatchQueue.main.async {
-                    self.alertStats = stats
+                    self.alertCounts = counts.map { VisualizationData(type: $0.key, count: $0.value) }
                 }
             }
         }

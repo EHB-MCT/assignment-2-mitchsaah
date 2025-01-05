@@ -26,6 +26,20 @@ struct ContentView: View {
                             }
                         }
                     }
+                    
+                    if !alertStats.isEmpty {
+                        Section(header: Text("Alert Statistics").font(.headline)) {
+                            ForEach(alertStats.keys.sorted(), id: \.self) { key in
+                                HStack {
+                                    Text(key)
+                                    Spacer()
+                                    Text("\(alertStats[key] ?? 0)")
+                                        .bold()
+                                }
+                            }
+                        }
+                    }
+                    
                     Section(header: Text("Daily Weather").font(.headline)) {
                         ForEach(dailyWeather, id: \.dt) { day in
                             WeatherListItemView(day: day)

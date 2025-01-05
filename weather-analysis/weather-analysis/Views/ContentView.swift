@@ -17,11 +17,6 @@ struct ContentView: View {
             } else if dailyWeather.isEmpty {
                 Text("Fetching weather data...")
                     .padding()
-            }
-                
-            if alertStats.isEmpty {
-                Text("No alert statistics available.")
-                    .foregroundColor(.gray)
             } else {
                 List {
                     if !alerts.isEmpty {
@@ -45,7 +40,14 @@ struct ContentView: View {
                             }
                         }
                     }
-                    
+
+                    if !alertCounts.isEmpty {
+                        Section(header: Text("Alert Visualizations").font(.headline)) {
+                            ChartView(data: alertCounts)
+                                .frame(height: 200)
+                        }
+                    }
+
                     Section(header: Text("Daily Weather").font(.headline)) {
                         ForEach(dailyWeather, id: \.dt) { day in
                             WeatherListItemView(day: day)

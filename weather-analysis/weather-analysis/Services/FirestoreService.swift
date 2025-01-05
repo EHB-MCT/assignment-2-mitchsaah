@@ -11,4 +11,21 @@ class FirestoreService {
             completion(error)
         }
     }
+    
+    func fetchAggregatedAlertStats(completion: @escaping ([String: Int]) -> Void) {
+        db.collection("weatherAlerts").getDocuments { snapshot, error in
+            guard let documents = snapshot?.documents, error == nil else {
+                print("Failed to fetch alerts: \(error?.localizedDescription ?? "Unknown error")")
+                completion([:])
+                return
+            }
+
+            var alertStats: [String: Int] = [:]
+            for document in documents {
+                let type = document.data()["type"] as? String ?? "Unknown"
+                alertStats[type, default: 0] += 1
+            }
+            completion(alertStats)
+        }
+    }
 }

@@ -5,6 +5,7 @@ struct ContentView: View {
     @State private var errorMessage: String?
     @State private var alerts: [String] = []
     private let weatherService = WeatherService()
+    @State private var alertStats: [String: Int] = [:]
     
     var body: some View {
         VStack {

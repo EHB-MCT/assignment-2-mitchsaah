@@ -90,6 +90,54 @@ This project integrates OpenWeather API, Firebase Firestore, and SwiftUI to trac
 
 ---
 
+### **9. Branch: `feature/visualization`**
+
+#### 1. Visualization Setup
+**Plan:**
+- Add graphical elements to represent weather data and alert frequencies dynamically.
+- Integrate the visualization seamlessly with existing components.
+
+---
+
+#### 2. Enhanced Data Handling
+**FirestoreService Extension:**
+- Added a `fetchAlertCounts` function:
+  - Aggregates alert types and their frequencies from Firestore.
+  - Simplifies querying logic for better performance.
+
+---
+
+#### 3. Added `ChartView` Component
+**Purpose:**
+- Create a SwiftUI view to display bar charts for visualizing data dynamically.
+
+**Implementation:**
+- Created a reusable `ChartView` component.
+- Added logic to render bar heights based on alert counts.
+- Included labels for alert types and counts to improve clarity.
+
+---
+
+#### 4. Extended `ContentView`
+**Updates:**
+- Added a new **`Alert Visualizations`** section within the `ContentView`:
+  - Integrated `ChartView` to display alert frequency visualizations.
+  - Dynamically populated data using the `alertCounts` state.
+- Adjusted UI layout to show visualizations only when data is available.
+
+---
+
+### Final Output
+#### Features Implemented:
+1. **Weather Data Display:**
+   - Lists daily weather conditions with detailed attributes.
+2. **Alerts and Statistics:**
+   - Dynamically displays weather alerts.
+   - Aggregates and displays alert counts by type.
+3. **Visualizations:**
+   - Introduced a bar chart for alert frequency visualization.
+
+
 ## Challenges Encountered
 1. **OpenWeather API**:
    - Initial issues with API compatibility were resolved by switching to the One Call API 3.0 subscription.
@@ -101,11 +149,6 @@ This project integrates OpenWeather API, Firebase Firestore, and SwiftUI to trac
 ---
 
 ## Remaining Work
-
-### **1. Visualization**
-- I will implement graphical representations (e.g., bar charts, line graphs) for:
-  - Temperature trends.
-  - Alert frequencies over time.
 
 ### **2. Firebase Analytics**
 - Logs of the user interactions with weather alerts and visualizations.

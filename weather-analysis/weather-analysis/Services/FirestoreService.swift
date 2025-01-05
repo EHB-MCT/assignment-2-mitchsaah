@@ -29,4 +29,18 @@ class FirestoreService {
             completion(alertStats)
         }
     }
+    
+    func fetchAllAlerts(completion: @escaping ([QueryDocumentSnapshot]) -> Void) {
+        db.collection("weatherAlerts")
+            .getDocuments { snapshot, error in
+                if let error = error {
+                    print("Error fetching alerts: \(error.localizedDescription)")
+                    completion([])
+                } else if let documents = snapshot?.documents {
+                    completion(documents)
+                } else {
+                    completion([])
+                }
+            }
+    }
 }

@@ -44,3 +44,18 @@ class FirestoreService {
             }
     }
 }
+
+extension FirestoreService {
+    func fetchAlertCounts(completion: @escaping ([String: Int]) -> Void) {
+        fetchAllAlerts { documents in
+            var alertCounts: [String: Int] = [:]
+            for document in documents {
+                if let type = document.data()["type"] as? String {
+                    alertCounts[type, default: 0] += 1
+                }
+            }
+            completion(alertCounts)
+        }
+    }
+}
+

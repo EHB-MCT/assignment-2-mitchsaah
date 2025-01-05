@@ -16,6 +16,11 @@ struct ContentView: View {
             } else if dailyWeather.isEmpty {
                 Text("Fetching weather data...")
                     .padding()
+            }
+                
+            if alertStats.isEmpty {
+                Text("No alert statistics available.")
+                    .foregroundColor(.gray)
             } else {
                 List {
                     if !alerts.isEmpty {

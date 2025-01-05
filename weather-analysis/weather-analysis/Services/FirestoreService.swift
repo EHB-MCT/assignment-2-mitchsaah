@@ -25,6 +25,7 @@ class FirestoreService {
                 let type = document.data()["type"] as? String ?? "Unknown"
                 alertStats[type, default: 0] += 1
             }
+            print("Fetched Alert Stats: \(alertStats)") 
             completion(alertStats)
         }
     }
